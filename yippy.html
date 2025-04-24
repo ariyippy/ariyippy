@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>To My Love 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Jua&family=Mali:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Mali', 'Jua', sans-serif;
+      background: linear-gradient(135deg, #ffe6eb, #fffafc);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #e84393;
+      margin: 0.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #555;
+      margin: 0.3rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background-color: #ff85a2;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      font-size: 1.3rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s, background 0.3s;
+      font-family: 'Jua', sans-serif;
+    }
+
+    button:hover {
+      background-color: #ff5c8a;
+      transform: scale(1.05);
+    }
+
+    #response {
+      font-size: 1.6rem;
+      color: #d6336c;
+      margin-top: 1.2rem;
+      animation: fadeIn 1s ease-in-out;
+      display: none;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-200px) scale(1.2) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 4s ease-in forwards;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: -10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://audio.jukehost.co.uk/1Z2iLrocQMEkPtfAAUp321wsVDCR3reh" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h1>I love you more than 3000</h1>
+  <p>너의 미소는 나에게 가장 큰 선물이야♡!! </p>
+  <p> from ur ariyippy :D </p>
+
+  <button onclick="acceptLove()">Accept Love 💌</button>
+  <div id="response">우와~ 우리 사랑은 이루어졌어 !! >.< </div>
+
+  <script>
+    function acceptLove() {
+      document.getElementById("response").style.display = "block";
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.top = window.innerHeight + 'px';
+        heart.style.background = `hsl(${Math.random() * 360}, 70%, 85%)`;
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }
+    }
+
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = window.innerHeight + 'px';
+      heart.style.background = `hsl(${Math.random() * 360}, 70%, 90%)`;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 600);
+  </script>
+</body>
+</html>
